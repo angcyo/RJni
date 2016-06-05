@@ -10,3 +10,8 @@
 /gradle/
 gradlew
 gradlew.bat
+libs/
+src/androidTest/
+src/main/java/
+src/main/res/drawable/
+src/test/
