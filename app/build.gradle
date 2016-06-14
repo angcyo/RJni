@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'angcyo'
+            keyPassword 'angcyo'
+            storeFile file('E:/angcyo/angcyo_key.jks')
+            storePassword 'angcyo'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     defaultConfig {
@@ -12,7 +20,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+//            signingConfig signingConfigs.config
+            signingConfig null
+        }
         release {
+//            signingConfig signingConfigs.config
+            signingConfig null
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
